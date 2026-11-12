@@ -32,11 +32,18 @@ PAGES = {
     "surcharge-returns-and-warranty": ("Surcharge, returns and warranty", "About", None),
     "how-to-use-the-trade-website": ("How to use the trade website", "About", None),
     "contact": ("Contact us", "Contact", "Get in touch by phone or email."),
-    "apply-for-a-trade-credit-account": ("Apply for a trade account", "Trade", "Trade rates and a credit facility for business customers."),
     "terms-conditions": ("Terms & Conditions", "Legal", None),
 }
 
-ARROW = '<svg class="arrow" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'
+# Pages that always link to TT's real site (working functions, not pages to redesign).
+EXTERNAL = {
+    "apply-for-a-trade-credit-account": "https://ttauto.co.uk/apply-for-a-trade-credit-account/",
+}
+
+# Built pages: tools/content/<slug>.html holds the page's <main> (paths written for one folder down).
+CONTENT = ROOT / "tools" / "content"
+
+ARROW ='<svg class="arrow" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'
 PHONE = '<svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>'
 MAIL = '<svg class="i i-line" aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3.5 6l8.5 7 8.5-7"/></svg>'
 WA = '<svg class="wa-icon" aria-hidden="true" viewBox="0 0 24 24"><use href="#wa-glyph"/></svg>'
@@ -47,6 +54,9 @@ def rewrite_index():
     n = 0
     for slug in PAGES:
         s, k = re.subn(r'href="https://ttauto\.co\.uk/%s/"' % re.escape(slug), 'href="%s/"' % slug, s)
+        n += k
+    for slug, url in EXTERNAL.items():
+        s, k = re.subn(r'href="%s/"' % re.escape(slug), 'href="%s"' % url, s)
         n += k
     INDEX.write_text(s, encoding="utf-8")
     return s, n
@@ -105,6 +115,9 @@ def build():
     </div>
   </section>
 </main>'''
+        built = CONTENT / f"{slug}.html"
+        if built.exists():
+            main = built.read_text(encoding="utf-8").strip()
         page = (
             head
             + f"<title>{t} – TT Automotive (redesign preview)</title>\n"
@@ -117,7 +130,8 @@ def build():
         out = ROOT / slug / "index.html"
         out.parent.mkdir(exist_ok=True)
         out.write_text(page, encoding="utf-8")
-    print(f"rewrote {n} links in index.html; wrote {len(PAGES)} placeholder pages")
+    built = sorted(p.stem for p in CONTENT.glob("*.html")) if CONTENT.exists() else []
+    print(f"rewrote {n} links in index.html; wrote {len(PAGES)} pages (built: {', '.join(built) or 'none'}; rest Coming soon)")
 
 
 if __name__ == "__main__":

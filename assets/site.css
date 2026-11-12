@@ -361,3 +361,59 @@ a:hover .arrow, a:focus-visible .arrow { transform: translateX(3px); }
   .stub-card .btn { width: 100%; }
   .stub-help { padding: 24px 20px; }
 }
+
+/* ---------- Built inner page: Diesel injectors ---------- */
+.crumbbar { background: #fff; border-bottom: 1px solid var(--rule); font-size: 15px; }
+.crumbbar ol { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 18px 0; list-style: none; color: var(--navy-ink); }
+.crumbbar li + li::before { content: "/"; margin-right: 8px; color: var(--muted); }
+.crumbbar a { color: var(--navy-ink); text-decoration: none; }
+.crumbbar a:hover { color: var(--burgundy); text-decoration: underline; }
+.crumbbar [aria-current="page"] { font-weight: 700; }
+
+.hero-page { min-height: 510px; }
+.hero-page .hero-copy { padding-top: 56px; padding-bottom: 56px; }
+.hero-page h1 { margin-bottom: 18px; max-width: none; }
+.hero-sub { margin: 0 0 12px; font-size: clamp(22px, 2.4vw, 35px); line-height: 1.2; }
+.hero-page .lede { margin-bottom: 30px; font-size: clamp(18px, 1.9vw, 27px); max-width: 18em; }
+.hero-page .hero-media .credit { bottom: 16px; }
+
+.h2-xl { font-size: clamp(32px, 4.4vw, 62px); letter-spacing: -0.035em; }
+.options { padding: 64px 0 60px; }
+.option-cols { display: grid; grid-template-columns: repeat(3, 1fr); }
+.option-cols li { padding: 4px 48px; }
+.option-cols li:first-child { padding-left: 0; }
+.option-cols li:last-child { padding-right: 0; }
+.option-cols li + li { border-left: 1px solid var(--rule); }
+.option-cols h3 { font-size: clamp(28px, 3.1vw, 45px); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 16px; }
+.option-cols p { margin: 0; font-size: clamp(18px, 1.65vw, 24px); line-height: 1.45; color: var(--text); max-width: 22em; }
+
+.feature-page { min-height: 408px; }
+.feature-page p { font-size: clamp(19px, 1.8vw, 26px); line-height: 1.3; }
+.feature-links-stack { flex-direction: column; align-items: flex-start; gap: 16px; }
+.feature-links-stack .text-link-light { font-size: clamp(18px, 1.6vw, 23px); font-weight: 700; }
+
+.help-band { background: var(--grey); padding: 64px 0; }
+.help-inner { display: grid; grid-template-columns: 1fr auto; gap: 28px 48px; align-items: center; }
+.help-band h2 { font-size: clamp(28px, 3.7vw, 52px); font-weight: 800; line-height: 1.08; margin-bottom: 18px; }
+.help-band .btn-lg { min-width: 380px; padding-top: 22px; padding-bottom: 22px; }
+
+@media (max-width: 900px) {
+  .hero-page { min-height: 0; }
+  .hero-page .hero-media { order: 0; aspect-ratio: 16 / 9; }
+  .hero-page .hero-copy { padding-bottom: 40px; }
+  .option-cols { grid-template-columns: 1fr; }
+  .option-cols li, .option-cols li:first-child, .option-cols li:last-child { padding: 22px 0; }
+  .option-cols li + li { border-left: 0; border-top: 1px solid var(--rule); }
+  .help-inner { grid-template-columns: 1fr; }
+  .help-band .btn-lg { min-width: 0; justify-self: start; }
+}
+@media (max-width: 640px) {
+  .crumbbar ol { padding: 12px 0; font-size: 14px; }
+  .hero-page .hero-copy { padding-top: 30px; padding-bottom: 32px; }
+  .hero-page .btn-lg { width: 100%; font-size: 18px; }
+  .hero-page .lede { font-size: 18px; }
+  .options { padding: 40px 0 28px; }
+  .option-cols p { font-size: 17px; }
+  .help-band { padding: 44px 0; }
+  .help-band .btn-lg { width: 100%; font-size: 18px; }
+}
