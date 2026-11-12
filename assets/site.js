@@ -44,3 +44,19 @@
   // Reset the mobile panel when widening past the breakpoint.
   window.matchMedia("(min-width: 1021px)").addEventListener("change", function (m) { if (m.matches) setMenu(false); });
 })();
+
+/* WhatsApp add-on — demo explainer (preview only).
+   On the live site, replace each [data-wa-open] button with a link to
+   https://wa.me/44XXXXXXXXXX?text=Hi%20TT%2C%20I%20need%20help%20finding%20a%20part and delete the dialog. */
+(function () {
+  var dlg = document.getElementById("wa-dialog");
+  if (!dlg || typeof dlg.showModal !== "function") return;
+  var opener = null;
+  document.querySelectorAll("[data-wa-open]").forEach(function (b) {
+    b.addEventListener("click", function () { opener = b; dlg.showModal(); });
+  });
+  dlg.querySelector("[data-wa-close]").addEventListener("click", function () { dlg.close(); });
+  // Click on the backdrop closes it.
+  dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
+  dlg.addEventListener("close", function () { if (opener) opener.focus(); });
+})();

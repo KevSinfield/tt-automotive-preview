@@ -10,10 +10,18 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=20261112c">
+<link rel="stylesheet" href="assets/site.css?v=20261112f">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- Shared WhatsApp-style glyph (speech bubble + handset), drawn for this preview -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa-glyph" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 1.8a8.2 8.2 0 1 1-4.3 15.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 0 1 12 3.8z"/>
+    <path fill="currentColor" d="M9.1 7.2c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 1.9 3 4.7 4.1 2.3.9 2.8.7 3.3.7.5-.1 1.6-.7 1.8-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3l-1.8-.9c-.3-.1-.5-.1-.7.1l-.8 1c-.1.2-.3.2-.6.1-.3-.1-1.1-.4-2.1-1.3-.8-.7-1.3-1.5-1.5-1.8-.2-.3 0-.4.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2z"/>
+  </symbol>
+</svg>
 
 <!-- Preview notice: remove before launch -->
 <div class="preview-strip" role="note">
@@ -113,7 +121,11 @@
         </div>
         <div class="routing-item">
           <h2>Need help finding a part?</h2>
-          <a class="text-link" href="https://ttauto.co.uk/contact/">Contact our team<svg class="arrow" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <div class="routing-links">
+            <a class="text-link" href="https://ttauto.co.uk/contact/">Contact our team<svg class="arrow" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <!-- WHATSAPP (add-on): on the live site this becomes <a href="https://wa.me/44XXXXXXXXXX?text=..."> once TT confirm the number -->
+            <button type="button" class="wa-link" data-wa-open aria-haspopup="dialog"><svg class="wa-icon" aria-hidden="true" viewBox="0 0 24 24"><use href="#wa-glyph"/></svg>Send a photo on WhatsApp</button>
+          </div>
         </div>
       </div>
     </div>
@@ -226,6 +238,7 @@
       <div class="contact-row">
         <a class="contact-item" href="tel:+441509633300"><svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>01509 633300</a>
         <a class="contact-item" href="mailto:info@ttauto.co.uk"><svg class="i i-line" aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3.5 6l8.5 7 8.5-7"/></svg>info@ttauto.co.uk</a>
+        <button type="button" class="contact-item contact-wa" data-wa-open aria-haspopup="dialog"><svg class="wa-icon" aria-hidden="true" viewBox="0 0 24 24"><use href="#wa-glyph"/></svg>WhatsApp us</button>
         <a class="btn btn-primary btn-lg contact-btn" href="https://ttauto.co.uk/contact/">Contact us<svg class="arrow" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </div>
@@ -271,6 +284,7 @@
       <ul>
         <li><a href="tel:+441509633300"><svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>01509 633300</a></li>
         <li><a href="mailto:info@ttauto.co.uk"><svg class="i i-line" aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3.5 6l8.5 7 8.5-7"/></svg>info@ttauto.co.uk</a></li>
+        <li><button type="button" class="footer-wa" data-wa-open aria-haspopup="dialog"><svg class="wa-icon" aria-hidden="true" viewBox="0 0 24 24"><use href="#wa-glyph"/></svg>WhatsApp (coming soon)</button></li>
         <li class="hours">Monday – Friday 8:30am – 5:00pm</li>
       </ul>
     </div>
@@ -284,6 +298,47 @@
   </div>
 </footer>
 
-<script src="assets/site.js?v=20261112a"></script>
+<!-- WHATSAPP (add-on): sticky button, phones only -->
+<button type="button" class="wa-sticky" data-wa-open aria-haspopup="dialog"><svg class="wa-icon" aria-hidden="true" viewBox="0 0 24 24"><use href="#wa-glyph"/></svg>WhatsApp</button>
+
+<!-- WHATSAPP (add-on): demo explainer. On the live site the buttons open WhatsApp directly and this dialog is removed. -->
+<dialog class="wa-dialog" id="wa-dialog" aria-labelledby="wa-title">
+  <div class="wa-head">
+    <span class="wa-badge"><svg class="wa-icon" aria-hidden="true" viewBox="0 0 24 24"><use href="#wa-glyph"/></svg></span>
+    <div>
+      <p class="wa-kicker">Coming soon · preview of an add-on</p>
+      <h2 id="wa-title">Send us a photo on WhatsApp</h2>
+    </div>
+    <button type="button" class="wa-close" data-wa-close aria-label="Close"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+
+  <div class="wa-body">
+    <ol class="wa-steps">
+      <li><strong>Tap WhatsApp.</strong> It opens a chat with TT on your phone (or WhatsApp on your computer).</li>
+      <li><strong>Send a photo</strong> of the part label or part number, plus the vehicle make, model or reg.</li>
+      <li><strong>Our team replies</strong> Monday – Friday, 8:30am – 5:00pm. Messages sent out of hours get an automatic reply and are answered the next working day.</li>
+    </ol>
+
+    <figure class="wa-chat" aria-label="Illustrative example conversation">
+      <div class="wa-chat-top"><span class="wa-avatar" aria-hidden="true">TT</span><span><strong>TT Automotive</strong><small>Business account</small></span></div>
+      <div class="wa-msgs">
+        <div class="msg msg-out">
+          <img src="assets/img/part-injectors.jpg" alt="Photo of a diesel injector" width="458" height="252" loading="lazy">
+          <p>Hi, can you match these injectors? 2016 Transit 2.2.</p>
+          <span class="msg-time">10:42</span>
+        </div>
+        <div class="msg msg-in">
+          <p>Thanks, got the photo. One of the team will check the part number and come back to you shortly with the options.</p>
+          <span class="msg-time">10:44</span>
+        </div>
+      </div>
+      <figcaption>Illustrative example</figcaption>
+    </figure>
+
+    <p class="wa-note"><strong>Demo only:</strong> WhatsApp isn’t connected in this preview, and the number is still to be confirmed. For now, call <a href="tel:+441509633300">01509 633300</a> or email <a href="mailto:info@ttauto.co.uk">info@ttauto.co.uk</a>.</p>
+  </div>
+</dialog>
+
+<script src="assets/site.js?v=20261112b"></script>
 </body>
 </html>

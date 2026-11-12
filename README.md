@@ -34,6 +34,15 @@ A static, single-page homepage demo for TT Automotive (Loughborough). It is **no
 - The trade section copy is adapted from TT's application page, not the mockup's "Access our trade customer area…", so that the single action is clear.
 - The footer has no **Privacy Policy** link, because ttauto.co.uk has no privacy page (/privacy-policy/ returns 404 and none is in the sitemap). "Website by …" is replaced with "Website redesign preview".
 
+## WhatsApp add-on (demo only)
+
+WhatsApp is shown as a planned add-on, not a working feature. TT's site lists no WhatsApp or mobile number, so the preview has no `wa.me` link and no number.
+
+- **Where it appears:** "Send a photo on WhatsApp" in the *Need help finding a part?* card, "WhatsApp us" in the contact section, "WhatsApp (coming soon)" in the footer, and a sticky green button on phones only.
+- **What it does here:** each button opens a "Coming soon" explainer. It has three steps (tap, send a photo of the part or label, the team replies in opening hours with an automatic reply out of hours), an *illustrative* example chat, and a "Demo only" note pointing to the phone and email.
+- **To make it live:** confirm the number (WhatsApp Business can run on the 01509 landline), replace each `data-wa-open` button with `<a href="https://wa.me/44XXXXXXXXXX?text=...">`, and delete the `#wa-dialog` dialog and its script block in `assets/site.js`. Decide who monitors it and set the out-of-hours auto-reply first.
+- The WhatsApp icon is a simple glyph drawn for this preview. Swap in the official WhatsApp brand asset for production.
+
 ## Local preview
 
 ```bash
