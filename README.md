@@ -4,7 +4,10 @@ A static, single-page homepage demo for TT Automotive (Loughborough). It is **no
 
 - Public URL: https://kevsinfield.github.io/tt-automotive-preview/
 - `noindex, nofollow` meta tag plus `robots.txt` (`Disallow: /`). A "Website redesign preview" strip sits at the top of the page.
-- No sign-in, forms, search, pricing, stock checks, retail-shop link or photo upload. Every link that leaves the homepage goes to an existing TT page, which was checked on 12 Nov 2026 (all returned HTTP 200).
+- No sign-in, forms, search, pricing, stock checks, retail-shop link or photo upload.
+- **Only the homepage is built.** Every other page TT has (17 in all) has a *Coming soon* placeholder in the preview at the same path as on ttauto.co.uk, e.g. `/diesel-injectors/`. So links stay inside the demo, and each placeholder can be replaced by the real page later. Each placeholder has the page title, TT's own one-line intro where there is one, a "This page hasn't been built yet" note, a link back to the homepage, and the phone, email and WhatsApp (coming soon) options.
+- **Links that still leave the preview, on purpose:** *Trade login* goes to TT's existing portal (`ttal.originsoftware.co.uk`), which would stay the same on a rebuilt site, and the preview notice links to ttauto.co.uk. All TT destinations were checked on 12 Nov 2026 and returned HTTP 200.
+- **Rebuild placeholders:** after changing the header, footer or WhatsApp explainer in `index.html`, run `python3 tools/build_pages.py`. It copies them into every placeholder page. Edit the `PAGES` list in that script to add, rename or drop pages, and delete a page's entry before hand-building that page so it doesn't get overwritten.
 
 ## Sources (checked against ttauto.co.uk, 12 Nov 2026)
 
