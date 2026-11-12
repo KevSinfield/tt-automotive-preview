@@ -48,7 +48,7 @@ Source: https://ttauto.co.uk/diesel-injectors/, checked 12 Nov 2026. Layout from
 - **New:** TT can supply a new part for whatever type of injector the vehicle needs, electronic or common rail.
 - **Remanufactured:** brought back to its original specification, cost-effective and "as good as new". A great option when a quick turnaround and long-term reliability are the priorities.
 - **Repaired:** might be the right choice if cost is a stronger consideration and the customer is prepared to wait a few days.
-- **Injector examples:** all six captions in TT's order (Bosch common rail injector, Bosch diesel injectors, Common rail injectors, Diesel fuel injectors, Bosch EUI, Delphi EUI). Each uses the photo that sits above it on TT's page, byte-identical to the live file. They are shown as examples, with no stock or price wording.
+- **Injector examples:** all six captions in TT's order (Bosch common rail injector, Bosch diesel injectors, Common rail injectors, Diesel fuel injectors, Bosch EUI, Delphi EUI). They are shown as examples, with no stock or price wording.
 - **Brand names:** Bosch, Delphi, Denso, Stanadyne, Siemens VDO and Zexel, as a plain "Manufacturer relationships" strip with no claims attached.
 
 **Condensed**
@@ -72,7 +72,8 @@ Source: https://ttauto.co.uk/diesel-injectors/, checked 12 Nov 2026. Layout from
 - **Trade site / retail site sentence:** not used. The retail destination isn't verified and the brief excludes a retail link.
 
 **Images**
-- **Example photos:** TT's six injector photos are only 124 px originals (no larger versions on the site). They are shown at up to 172 px in light cards, not stretched. Ask TT for larger originals for production.
+- **Example photos (illustrative, at Kev's request):** the gallery uses the six AI-generated images cropped from the extended mockup, because TT's own photos are only 124 px and looked poor. The gallery carries an "Illustrative images" label, and each image's alt text describes it generically, e.g. "Illustrative image of an electronic unit injector", rather than naming a brand. **Before launch** the branded captions (Bosch, Delphi) must sit on TT's real photos of those parts, not generated pictures.
+- **TT's originals kept for reference:** in `assets/img/injectors/`, byte-identical to the live site and matched to their captions. Ask TT for larger versions.
 - **Hero and test bench:** illustrative crops from the mockup, captioned "Illustrative photography". TT's site has no usable workshop photo. The test-bench image on TT's homepage is a used Bosch test bench advertised for sale, not TT's workshop.
 
 **Links**
