@@ -5,9 +5,9 @@ A static, single-page homepage demo for TT Automotive (Loughborough). It is **no
 - Public URL: https://kevsinfield.github.io/tt-automotive-preview/
 - `noindex, nofollow` meta tag plus `robots.txt` (`Disallow: /`). A "Website redesign preview" strip sits at the top of the page.
 - No sign-in, forms, search, pricing, stock checks, retail-shop link or photo upload.
-- **Built pages:** the homepage and **Diesel injectors** (`/diesel-injectors/`, from the second mockup). The injectors page copy is based on https://ttauto.co.uk/diesel-injectors/ and keeps TT's split between new, remanufactured and repaired injectors. It deliberately leaves out TT's warranty, next-day delivery, stock, vehicle-make and manufacturer-approval wording, so the preview doesn't repeat or extend those claims without review. Its hero and test-bench photos are illustrative crops from the mockup. The page's content lives in `tools/content/diesel-injectors.html`, and the generator wraps it in the shared header and footer.
-- **Everything else is a placeholder.** Every other page TT has (15 more) has a *Coming soon* placeholder in the preview at the same path as on ttauto.co.uk, e.g. `/diesel-injectors/`. So links stay inside the demo, and each placeholder can be replaced by the real page later. Each placeholder has the page title, TT's own one-line intro where there is one, a "This page hasn't been built yet" note, a link back to the homepage, and the phone, email and WhatsApp (coming soon) options.
-- **Links that still leave the preview, on purpose:** *Trade login* goes to TT's existing portal (`ttal.originsoftware.co.uk`), *Apply for a trade account* goes to TT's real application form, and the preview notice links to ttauto.co.uk. Both trade routes are working functions that would stay the same on a rebuilt site. All TT destinations were checked on 12 Nov 2026 and returned HTTP 200.
+- **Built pages:** the homepage and **Diesel injectors** (`/diesel-injectors/`). The injectors page follows the extended mockup, and its content is recorded under *Diesel injectors: content handover* below. Its main content lives in `tools/content/diesel-injectors.html`, and the generator wraps it in the shared header and footer.
+- **Everything else is a placeholder.** Every other page TT has (14 more) has a *Coming soon* placeholder in the preview at the same path as on ttauto.co.uk, e.g. `/diesel-injectors/`. So links stay inside the demo, and each placeholder can be replaced by the real page later. Each placeholder has the page title, TT's own one-line intro where there is one, a "This page hasn't been built yet" note, a link back to the homepage, and the phone, email and WhatsApp (coming soon) options.
+- **Links that still leave the preview, on purpose:** *Trade login* goes to TT's existing portal (`ttal.originsoftware.co.uk`), *Apply for a trade account* goes to TT's real application form, *Surcharge, returns and warranty* goes to TT's real page, and the preview notice links to ttauto.co.uk. Both trade routes are working functions that would stay the same on a rebuilt site. All TT destinations were checked on 12 Nov 2026 and returned HTTP 200.
 - **Rebuild placeholders:** after changing the header, footer or WhatsApp explainer in `index.html`, run `python3 tools/build_pages.py`. It copies them into every placeholder page. Edit the `PAGES` list in that script to add, rename or drop pages, and add `tools/content/<slug>.html` to turn a placeholder into a built page. `EXTERNAL` lists pages that always link to TT's real site.
 
 ## Sources (checked against ttauto.co.uk, 12 Nov 2026)
@@ -37,6 +37,47 @@ A static, single-page homepage demo for TT Automotive (Loughborough). It is **no
 - The workshop feature uses TT's own wording ("We repair thousands of components every year…"). It links to the Repair and Remanufacturing pages instead of "Inside our workshop", because there is no workshop-tour page.
 - The trade section copy is adapted from TT's application page, not the mockup's "Access our trade customer area…", so that the single action is clear.
 - The footer has no **Privacy Policy** link, because ttauto.co.uk has no privacy page (/privacy-policy/ returns 404 and none is in the sitemap). "Website by …" is replaced with "Website redesign preview".
+
+## Diesel injectors: content handover
+
+Source: https://ttauto.co.uk/diesel-injectors/, checked 12 Nov 2026. Layout from the extended mockup.
+
+**Retained (on the page, in TT's words or close to them)**
+- **Headings:** "Diesel injectors" and "Electronic and common rail diesel injectors".
+- **What TT offers:** new, remanufactured and repaired injectors.
+- **New:** TT can supply a new part for whatever type of injector the vehicle needs, electronic or common rail.
+- **Remanufactured:** brought back to its original specification, cost-effective and "as good as new". A great option when a quick turnaround and long-term reliability are the priorities.
+- **Repaired:** might be the right choice if cost is a stronger consideration and the customer is prepared to wait a few days.
+- **Injector examples:** all six captions in TT's order (Bosch common rail injector, Bosch diesel injectors, Common rail injectors, Diesel fuel injectors, Bosch EUI, Delphi EUI). Each uses the photo that sits above it on TT's page, byte-identical to the live file. They are shown as examples, with no stock or price wording.
+- **Brand names:** Bosch, Delphi, Denso, Stanadyne, Siemens VDO and Zexel, as a plain "Manufacturer relationships" strip with no claims attached.
+
+**Condensed**
+- **Remanufacturing paragraph:** shortened to the two points above. "Demands a high level of investment in technology and training" is dropped, and TT's "assured long term reliability" becomes "long-term reliability".
+- **Brand paragraphs:** the six per-brand paragraphs are reduced to the names strip.
+
+**Held for TT to confirm (not on the preview page)**
+- **Next-day delivery:** "delivered next day" (remanufactured injectors).
+- **Warranty:** "complete with a comprehensive 12 month warranty".
+- **Bosch centre count:** the injectors page says "one of just 32 Authorised Bosch Diesel Centres", but the About Us page says "one of just 28". TT needs to confirm the current figure.
+- **Approval claims:** "All the OE manufacturers have approved our services…", "All our diesel injector repairs are authorised by the OE manufacturer", and "approved and authorised by the world's leading OE manufacturers…".
+- **Vehicle-make list:** Toyota, Mercedes, VW and the rest. On the injectors page this sentence says TT is "fully authorised to supply diesel **pumps**", which looks like a copy error.
+- **Brand-specific statements for TT to review before any are published:**
+  - **Bosch:** "can supply and repair the full range of Bosch Diesel injectors".
+  - **Delphi:** "authorised to repair their complete range of diesel injectors".
+  - **Denso:** "making diesel injectors since 1957", plus "fully authorised".
+  - **Stanadyne:** "an authorised repair centre for their complete range of diesel injectors".
+  - **Siemens VDO:** "authorised repair centres – such as TT".
+  - **Zexel:** "authorised to repair the full range of Zexel diesel **pumps**". This one is about pumps, so it is not presented as an injector claim.
+  - **Naming:** the brand appears as "Siemens VDO" here but "VDO" in the homepage logo strip. TT should confirm which they want.
+- **Trade site / retail site sentence:** not used. The retail destination isn't verified and the brief excludes a retail link.
+
+**Images**
+- **Example photos:** TT's six injector photos are only 124 px originals (no larger versions on the site). They are shown at up to 172 px in light cards, not stretched. Ask TT for larger originals for production.
+- **Hero and test bench:** illustrative crops from the mockup, captioned "Illustrative photography". TT's site has no usable workshop photo. The test-bench image on TT's homepage is a used Bosch test bench advertised for sale, not TT's workshop.
+
+**Links**
+- **Inside the demo:** Speak to our team / Contact our team, Diesel pumps and Repair services open the demo's Coming soon pages, as you chose earlier. Each can switch to TT's live page with one line in `tools/build_pages.py`.
+- **TT's real pages:** Trade login, Apply for a trade account, and Surcharge, returns and warranty. Surcharge was switched to TT's real page for this update. It is in the shared header and footer, so it also changed in the homepage's About menu and footer.
 
 ## WhatsApp add-on (demo only)
 

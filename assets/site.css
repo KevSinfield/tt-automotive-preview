@@ -392,7 +392,7 @@ a:hover .arrow, a:focus-visible .arrow { transform: translateX(3px); }
 .feature-links-stack { flex-direction: column; align-items: flex-start; gap: 16px; }
 .feature-links-stack .text-link-light { font-size: clamp(18px, 1.6vw, 23px); font-weight: 700; }
 
-.help-band { background: var(--grey); padding: 64px 0; }
+.help-band { background: #fff; border-top: 1px solid var(--rule); padding: 64px 0; }
 .help-inner { display: grid; grid-template-columns: 1fr auto; gap: 28px 48px; align-items: center; }
 .help-band h2 { font-size: clamp(28px, 3.7vw, 52px); font-weight: 800; line-height: 1.08; margin-bottom: 18px; }
 .help-band .btn-lg { min-width: 380px; padding-top: 22px; padding-bottom: 22px; }
@@ -416,4 +416,33 @@ a:hover .arrow, a:focus-visible .arrow { transform: translateX(3px); }
   .option-cols p { font-size: 17px; }
   .help-band { padding: 44px 0; }
   .help-band .btn-lg { width: 100%; font-size: 18px; }
+}
+
+/* Injector examples gallery (TT's own photos, 124 px originals: shown small, never stretched) */
+.examples { padding: 8px 0 72px; }
+.example-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px 24px; }
+.example-grid figure { margin: 0; }
+.example-img { display: grid; place-items: center; height: 200px; background: var(--grey); border: 1px solid var(--rule); }
+.example-img img { width: 172px; height: 172px; object-fit: cover; }
+.example-grid figcaption { margin-top: 12px; font: 700 clamp(17px, 1.55vw, 23px)/1.3 var(--head); color: var(--navy-ink); letter-spacing: -0.01em; }
+
+/* Manufacturer relationships: understated names strip */
+.relations { background: var(--grey); border-top: 1px solid var(--rule); padding: 26px 0; }
+.relations-inner { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 40px; }
+.relations h2 { font-size: clamp(20px, 2vw, 28px); font-weight: 800; padding-right: 40px; border-right: 1px solid #b9c0ca; }
+.relations-list { display: flex; flex-wrap: wrap; gap: 6px 0; font-size: clamp(16px, 1.45vw, 21px); color: var(--navy-ink); }
+.relations-list li + li::before { content: "·"; margin: 0 14px; color: var(--muted); }
+
+@media (max-width: 900px) {
+  .example-grid { grid-template-columns: repeat(2, 1fr); }
+  .relations h2 { border-right: 0; padding-right: 0; }
+}
+@media (max-width: 640px) {
+  .examples { padding: 0 0 44px; }
+  .example-grid { gap: 20px 14px; }
+  .example-img { height: 150px; }
+  .example-img img { width: 132px; height: 132px; }
+  .relations-inner { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .relations-list { gap: 6px 20px; }
+  .relations-list li + li::before { content: none; }
 }

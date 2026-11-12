@@ -29,7 +29,6 @@ PAGES = {
     "consumables-catalogue": ("Consumables catalogue", "Products", "From washers to seal kits, a wide range of fast-moving consumable parts in stock."),
     "hc-cargo": ("HC Cargo", "Products", None),
     "about-us": ("About us", "About", "The UK’s largest independent diesel engine specialist."),
-    "surcharge-returns-and-warranty": ("Surcharge, returns and warranty", "About", None),
     "how-to-use-the-trade-website": ("How to use the trade website", "About", None),
     "contact": ("Contact us", "Contact", "Get in touch by phone or email."),
     "terms-conditions": ("Terms & Conditions", "Legal", None),
@@ -38,6 +37,7 @@ PAGES = {
 # Pages that always link to TT's real site (working functions, not pages to redesign).
 EXTERNAL = {
     "apply-for-a-trade-credit-account": "https://ttauto.co.uk/apply-for-a-trade-credit-account/",
+    "surcharge-returns-and-warranty": "https://ttauto.co.uk/surcharge-returns-and-warranty/",
 }
 
 # Built pages: tools/content/<slug>.html holds the page's <main> (paths written for one folder down).
