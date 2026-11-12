@@ -89,6 +89,23 @@ WhatsApp is shown as a planned add-on, not a working feature. TT's site lists no
 - **To make it live:** confirm the number (WhatsApp Business can run on the 01509 landline), replace each `data-wa-open` button with `<a href="https://wa.me/44XXXXXXXXXX?text=...">`, and delete the `#wa-dialog` dialog and its script block in `assets/site.js`. Decide who monitors it and set the out-of-hours auto-reply first.
 - The WhatsApp icon is a simple glyph drawn for this preview. Swap in the official WhatsApp brand asset for production.
 
+## Visit alerts (preview only, remove before launch)
+
+The published preview sends Kev a phone notification through **ntfy.sh** (free, no account), as on the Bensons, Legal Comfort and Vintage Pine previews.
+
+- **When it sends one:**
+  - a page is opened (once per page per visit; Coming soon pages are labelled as such);
+  - the WhatsApp explainer is opened;
+  - the phone number or email address is tapped;
+  - Trade login, Apply for a trade account, or any other link to the live TT site is tapped.
+- **What each alert contains:** the page, the device and browser, the screen width, the `?from=` tag if the link had one, and the referring site if known.
+- **To receive alerts:** install the free ntfy app (iPhone or Android), tap +, and subscribe to topic `tt-preview-mqlwv55w1t` on the default server (ntfy.sh). Or open https://ntfy.sh/tt-preview-mqlwv55w1t in a browser.
+- **Your own visits:** open any page once with `?me` (e.g. `…/tt-automotive-preview/?me`) and that browser stops sending alerts; `?me=0` turns it back on. Do this on each of your own devices.
+- **Tagging links:** add `?from=<tag>` to a link you send (e.g. `?from=tt-email`). Every alert from that visit then says "from: tt-email".
+- **Privacy:** no cookies, no visitor IDs, and no IP addresses logged (ntfy.sh sees the request, but we don't receive it). Alerts fire only on the GitHub Pages copy, not on localhost. The footer of every page tells visitors in one line. The topic name is visible in the public script, but the alerts contain nothing personal.
+- **History:** ntfy.sh keeps alerts for about 12 hours; the app keeps them longer.
+- **Remove before launch:** the visit-alert block at the end of `assets/site.js`, and the `visit-note` line in the footer.
+
 ## Local preview
 
 ```bash
